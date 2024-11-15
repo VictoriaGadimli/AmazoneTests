@@ -17,14 +17,10 @@ public class LoginPage extends BasePage {
     }
 
 
-    public MainPage login(String email, String password) throws InterruptedException {
+    public MainPage login(String email, String password) {
         signInLinkField.click();
         loginField.setValue(email).pressEnter();
-
-        Thread.sleep(10000);
-
         passwordField.setValue(password).pressEnter();
-
         return page(MainPage.class);
     }
 }
